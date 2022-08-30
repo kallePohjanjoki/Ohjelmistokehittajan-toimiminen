@@ -5,31 +5,40 @@ export default function Index() {
          <h1>Hallinta</h1>
         <ul>
         
-            
-            
-          
-         
-        <form>
-            <label>
-                Huoltoaseman nimi:  
-                <input type="text" name="name" />
-            </label>
-            <input type="submit" value="Submit" />
-        </form> 
-            
 
 
 
         <form>
             <label>
-                bensan hinta:  
+                98 hinta:  
                 <input type="text" name="price" />
             </label>
             <input type="submit" value="Submit" />
         </form>    
+
+
+        <form>
+            <label>
+                95 hinta:  
+                <input type="text" name="price" />
+            </label>
+            <input type="submit" value="Submit" />
+        </form>  
+
+
+
+        <form>
+            <label>
+                dieselin hinta:  
+                <input type="text" name="price" />
+            </label>
+            <input type="submit" value="Submit" />
+        </form>  
          
         </ul>
       </div> 
     );
   }
+  
+
   
