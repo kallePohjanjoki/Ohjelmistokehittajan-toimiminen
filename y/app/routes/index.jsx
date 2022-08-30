@@ -25,7 +25,7 @@ export default function Index() {
               </li>
             );
           }
-          return <li key={index}>{nimi}</li>;
+          return <li key={index}>{name}</li>;
         })}
       </ul>
      
