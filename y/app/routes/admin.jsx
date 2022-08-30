@@ -14,10 +14,15 @@ export default function Index() {
 
         <script>
         function myFunction() {
-        var x = document.getElementById("myText").value;
-        document.getElementById("demo").innerHTML = x;
+            var x = document.getElementById("myText").value;
+            document.getElementById("demo").innerHTML = x;
         }
         </script>
+
+
+
+
+    
       
     </div> 
   );
