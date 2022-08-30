@@ -16,12 +16,12 @@ export default function Index() {
        <h1>Welcome to Remix</h1>
 
        <ul>
-        {ostoslista.map((ostos, index) => {
-          const nimi = ostos.nimi;
+        {hinnat.map((ostos, index) => {
+          const nimi = ostos.name;
           if (ostos.hankittu) {
             return (
               <li key={index}>
-                <s>{nimi}</s>
+                <s>{name}</s>
               </li>
             );
           }
