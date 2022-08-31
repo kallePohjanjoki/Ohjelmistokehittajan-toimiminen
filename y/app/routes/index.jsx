@@ -6,7 +6,7 @@ import { getHinnat } from "~/api.server";
 
 export const loader = async () => {
   const hinnat = await getHinnat();
-  return json(hinnat));
+  return json(hinnat);
 };
 
 export default function Index() {
