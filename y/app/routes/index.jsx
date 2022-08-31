@@ -1,7 +1,7 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { getHinnat } from "~/api.server";
-
+//
 
 
 export const loader = async () => {
