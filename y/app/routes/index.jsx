@@ -17,10 +17,9 @@ export default function Index() {
        <h1>Welcome to Remix</h1>
 
        <ul>
-        {hinnat.map((ostos, index) => {
-          const name = ostos.name;
+        {Object.entries(hinnat).map(([name, ostos] ) => {
           const price = ostos.price;
-          return <li key={index}>{name} {price}</li>;
+          return <li key={name}>{name} {price}</li>;
         })}
       </ul>
      

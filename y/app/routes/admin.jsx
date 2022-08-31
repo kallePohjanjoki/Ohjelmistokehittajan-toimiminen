@@ -1,16 +1,19 @@
 import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { getHinnat } from "~/api.server";
+import { getHinnat, updateHinta } from "~/api.server";
 
-
+export const action = async ({ request }) => {
+    const formData = await request.formData();
+    const values = Object.fromEntries(formData);
+    updateHinta(values);
+  
+    return null;
+  };
 
 export const loader = async () => {
   const hinnat = await getHinnat();
   return json(hinnat);
 };
-
-
-
 
 export default function Index() {
     const hinnat = useLoaderData()
@@ -23,10 +26,11 @@ export default function Index() {
         
 
 
-        <form>
+        <form method="POST">
             <label>
                 98 hinta:  
-                <input type="text" name="price" defaultValue={hinnat[0].price}/>
+                <input type="text" name="price" defaultValue={hinnat["98"].price}/>
+                <input type="hidden" name="name" value="98"/>
             </label>
             <input type="submit" value="Submit" />
         </form>    
