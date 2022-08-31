@@ -10,6 +10,7 @@ export const loader = async () => {
 };
 
 export default function Index() {
+  const hinnat = useLoaderData()
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
 
@@ -18,14 +19,8 @@ export default function Index() {
        <ul>
         {hinnat.map((ostos, index) => {
           const name = ostos.name;
-          if (ostos.hankittu) {
-            return (
-              <li key={index}>
-                <s>{name}</s>
-              </li>
-            );
-          }
-          return <li key={index}>{name}</li>;
+          const price = ostos.price;
+          return <li key={index}>{name} {price}</li>;
         })}
       </ul>
      
