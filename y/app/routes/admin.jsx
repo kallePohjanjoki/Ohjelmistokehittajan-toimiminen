@@ -5,7 +5,7 @@ import { getHinnat, updateHinta } from "~/api.server";
 export const action = async ({ request }) => {
     const formData = await request.formData();
     const values = Object.fromEntries(formData);
-    updateHinta(values);
+    await updateHinta(values);
   
     return null;
   };
@@ -23,37 +23,20 @@ export default function Index() {
          <h1>Hallinta</h1>
         <ul>
         
-        
-
-
-        <form method="POST">
+        {hinnat.map((hinta) => {
+          const price = hinta.price;
+          const name = hinta.name;
+          return (
+            <form method="POST">
             <label>
-                98 hinta:  
-                <input type="text" name="price" defaultValue={hinnat["98"].price}/>
-                <input type="hidden" name="name" value="98"/>
+                {name} hinta:  
+                <input type="text" name="price" defaultValue={price}/>
+                <input type="hidden" name="name" value={name} />
             </label>
             <input type="submit" value="Submit" />
-        </form>    
-
-
-        <form>
-            <label>
-                95 hinta:  
-                <input type="text" name="price" />
-            </label>
-            <input type="submit" value="Submit" />
-        </form>  
-
-
-
-        <form>
-            <label>
-                dieselin hinta:  
-                <input type="text" name="price" />
-            </label>
-            <input type="submit" value="Submit" />
-        </form>  
-         
+        </form> 
+          );
+        })}
         </ul>
       </div> 
     );

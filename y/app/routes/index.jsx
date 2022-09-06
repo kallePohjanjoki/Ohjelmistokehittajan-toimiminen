@@ -17,8 +17,9 @@ export default function Index() {
        <h1>Welcome to Remix</h1>
 
        <ul>
-        {Object.entries(hinnat).map(([name, ostos] ) => {
-          const price = ostos.price;
+        {hinnat.map((hinta) => {
+          const price = hinta.price;
+          const name = hinta.name;
           return <li key={name}>{name} {price}</li>;
         })}
       </ul>
